@@ -1,0 +1,44 @@
+{% extends 'base_layout.html '%}
+<head>
+    <meta charset="UTF-8">
+    <title>History</title>
+</head>
+{% block main %}
+<body>
+<br>
+<h1>Account History</h1>
+<br>
+<form  method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit">
+    <br>
+    <a href="/" class="btn btn-primary">Log Out</a>
+
+
+</form>
+<!--{% if mpin %}-->
+
+<!--<h4>Accno</h4>    {{accno}}-->
+
+<!--<h4>Mpin</h4>    {{mpin}}-->
+
+<!--<h4>Balance</h4>    {{balance}}-->
+
+<!--<h4>Amount transfered</h4> {{amount}}-->
+
+
+
+<!--    <hr>-->
+
+<!--{%endif%}-->
+{%for trans in transaction%}
+
+accno:{{trans.accno}}
+amount:{{trans.amount}}
+<hr>
+{%endfor%}
+
+
+</body>
+{% endblock %}

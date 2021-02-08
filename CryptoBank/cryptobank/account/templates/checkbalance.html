@@ -1,0 +1,21 @@
+{% extends 'base_layout.html' %}
+{% block main%}
+<body>
+
+<form method="post">
+
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit">
+</form>
+
+{% if balance %}
+<h5>Balance</h5>{{balance}}
+
+{% endif %}
+
+
+</body>
+<br><br><br><br><br>
+
+{% endblock %}

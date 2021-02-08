@@ -1,0 +1,36 @@
+{% extends 'base_layout1.html' %}
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>Create Accccount</title>-->
+<!--</head>-->
+{% block stylecontent %}
+.container {
+  width: 500px;
+  clear: both;
+}
+
+.container input {
+  width: 100%;
+  clear: both;
+}
+{% endblock %}
+
+{% block main %}
+<body>
+
+<h1>Enter the details</h1>
+
+<div class="container">
+
+    <form action="" method="post">
+        {%csrf_token%}
+        {{form.as_p}}
+    <input type="submit" class="btn btn-primary" value="Submit">
+    </form>
+</div>
+
+</body>
+<br><br><br><br><br><br>
+{% endblock %}

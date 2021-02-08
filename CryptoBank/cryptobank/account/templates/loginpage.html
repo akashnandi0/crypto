@@ -1,0 +1,51 @@
+{% extends 'base_layout1.html' %}
+
+{% block stylecontent %}
+    <style>
+        h1 {
+            text-align:center;
+            display: block;
+            font-size: 20
+            font-weight: bold;
+        }
+        h4 {
+            font-weight: 400;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+
+        .foot {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+        }
+    </style>
+{% endblock %}
+
+
+{% block main %}
+<br><br>
+<form action="action_page.php" method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit" value="Login"/>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> Remember me
+    </label>
+  </div>
+  <br>
+  <div class="container" style="background-color:white">
+<!--    <button type="button" class="cancelbtn">Cancel</button>-->
+    <span class="psw">Forgot Password?<a href="#"> Click Here</a></span>
+  </div>
+  <div class="container" style="background-color:white">
+<!--    <button type="button" class="cancelbtn">Cancel</button>-->
+    <span class="newuser">New User?<a href="http://127.0.0.1:8000/account/createaccount/">Signup Here</a></span>
+  </div>
+</form>
+
+
+{% endblock %}
+

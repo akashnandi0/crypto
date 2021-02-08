@@ -1,0 +1,22 @@
+{% extends 'base_layout1.html' %}
+{% block main%}
+<body>
+<a href="/account/createaccount" class="btn btn-primary" style="background-color:white;color:green;width:150px;font-size:13px;font-weight:bold;">create new account</a>
+<hr>
+<br>
+{%for person in account%}
+    personname:{{person.personname}}
+    accno:{{person.accno}}
+    acctype:{{person.acctype}}
+    balance:{{person.balance}}
+    phonenumber:{{person.phonenumber}}
+    mpin:{{person.mpin}}
+<hr>
+{%endfor%}
+<br><br><br><br><br><br><br><br><br><br><br>
+
+
+
+
+</body>
+{% endblock %}

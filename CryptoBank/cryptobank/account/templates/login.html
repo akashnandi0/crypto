@@ -1,0 +1,39 @@
+{% extends 'base_layout1.html' %}
+
+{% block stylecontent %}
+    <style>
+        h1 {
+            text-align:center;
+            display: block;
+            font-size: 20
+            font-weight: bold;
+        }
+        h4 {
+            font-weight: 400;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+
+        .foot {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+        }
+    </style>
+{% endblock %}
+
+{% block main %}
+<body>
+<br>
+<h3>Enter Login Details</h3>
+<br>
+<form action="" method="post">
+    {%csrf_token%}
+    {{form.as_p}}
+    <input type="submit">
+</form>
+
+</body>
+{% endblock %}

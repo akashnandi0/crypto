@@ -1,0 +1,59 @@
+{% extends 'base_layout1.html' %}
+
+{% block stylecontent %}
+    <style>
+        h1 {
+            text-align:center;
+            display: block;
+            font-size: 20
+            font-weight: bold;
+        }
+        h4 {
+            font-weight: 400;
+        }
+        a:hover {
+            text-decoration: none;
+        }
+
+        .foot {
+            position: absolute;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+        }
+    </style>
+{% endblock %}
+
+
+{% block main %}
+<br><br>
+<form action="action_page.php" method="post">
+
+  <div class="container">
+<!--    <img src="/static/images/education.jpg" width="100px">-->
+    <label><b>Create Username</b></label>
+        {%csrf_token%}
+        {{form.as_p}}
+    <input type="text" placeholder="Enter Name" name="uname" required>
+    <br>
+    <label><b>Create Password</b></label>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+    <br>
+    <label><b>Re-enter Password</b></label>
+    <input type="password" placeholder="Re-enter Password" name="repsw" required>
+    <br>
+    <button type="submit">Sign Up</button>
+    <label>
+      <input type="checkbox" checked="checked" name="remember"> keep me signed in
+    </label>
+  </div>
+<br>
+  <div class="container" style="background-color:#f1f1f1">
+<!--    <button type="button" class="cancelbtn">Cancel</button>-->
+    <span class="psw">Already a member? <a href="/user/login">Login Here</a></span>
+  </div>
+</form>
+
+
+{% endblock %}
+
